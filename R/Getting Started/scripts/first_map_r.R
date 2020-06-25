@@ -21,7 +21,7 @@ library(ggspatial) ## For annotations in the plot
 
 ## Downloading files ---------------------------------------------------------------------------------------------
 
-## Create a new folder for extracted data
+## Create a subfolder for extracted data
 dir.create(file.path(workspace,"data"))
 
 
@@ -103,7 +103,7 @@ ggplot() +
 
 ## Saving map------------------------------------------------------------------------------------------------
 
-## Creating a new file for outputs
+## Creating a subfolder for outputs
 dir.create(file.path(workspace,"outputs"))
 
 ggsave( filename="firstmap_r.png",
@@ -116,7 +116,7 @@ ggsave( filename="firstmap_r.png",
 ## Saving R Script ------------------------------------------------------------------------------------------
 
 dir.create(file.path(workspace,"scripts"))
-# To save a R script : ctrl+S in the new created folder
+# To save a R script : ctrl+S in the new created subfolder
 #To save the currently open script file to disk.
 rstudioapi::documentSave()
 rstudioapi::documentSave(rstudioapi::getActiveDocumentContext()$id)
