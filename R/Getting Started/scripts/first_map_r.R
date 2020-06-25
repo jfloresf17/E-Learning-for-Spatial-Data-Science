@@ -25,10 +25,10 @@ library(ggspatial) ## For annotations in the plot
 dir.create(file.path(workspace,"data"))
 
 
-##"https://drive.google.com/file/d/0By1rYqKYtPp5RUZpdHo4OHNvQkE", Vegeatation Cover link
-##"https://drive.google.com/file/d/1Mrgi6TycuZHFNWfWZrH5NioBwJ6gRoiO/view?usp=sharing"  Metropolitan Lima link
+##"https://drive.google.com/file/d/0By1rYqKYtPp5RUZpdHo4OHNvQkE", Vegetation Cover link
+##"https://drive.google.com/file/d/1Mrgi6TycuZHFNWfWZrH5NioBwJ6gRoiO/view?usp=sharing",  Metropolitan Lima link
 
-#Downloading and unziping files (you must authorize to googledrive)
+#Downloading and unziping files (you must authorize to googledrive API)
 
 ## Diferent tempfile for safety
 temp<-tempfile(fileext = ".zip")
@@ -46,7 +46,7 @@ unzip(temp_1, exdir = file.path(workspace,"data"))
 list.files(file.path(workspace,"data"))
 
 ## I read the shapefiles and I've write them on a new geopackage that I created
-## In diferent st_write for integrity
+## In different st_write for integrity
 file.path( workspace,"data","CobVeg_180615.shp") %>% 
   st_read()  %>% 
   st_write(file.path(workspace,"data","cov_veg.gpkg"), "vegetation")
